@@ -1,0 +1,25 @@
+@use '@/styles/reset';
+@use '@/styles/breakpoints';
+@use '@/styles/colors';
+@use '@/styles/animations';
+
+:root {
+    background-color: colors.$bg-primary;
+    font-family: Roboto, system-ui, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+        sans-serif;
+    color: colors.$text-primary;
+}
+
+#root {
+    width: 100%;
+    max-width: breakpoints.$max;
+    min-width: breakpoints.$min;
+    min-height: 100dvh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}

@@ -1,0 +1,39 @@
+:root {
+    --bg-primary-rgb: 248, 250, 252;
+    --bg-secondary-rgb: 195, 223, 247;
+    --bg-card-rgb: 240, 240, 240;
+    --bg-button-rgb: 65, 90, 119;
+    --text-primary-rgb: 50, 54, 58;
+    --text-secondary-rgb: 39, 102, 157;
+
+    --bg-primary: rgb(var(--bg-primary-rgb));
+    --bg-secondary: rgb(var(--bg-secondary-rgb));
+    --bg-card: rgb(var(--bg-card-rgb));
+    --bg-button: rgb(var(--bg-button-rgb));
+    --text-primary: rgb(var(--text-primary-rgb));
+    --text-secondary: rgb(var(--text-secondary-rgb));
+
+    &[data-theme='dark'] {
+        --bg-primary-rgb: 13, 27, 42;
+        --bg-secondary-rgb: 173, 202, 228;
+        --bg-card-rgb: 27, 38, 59;
+        --bg-button-rgb: 224, 225, 221;
+        --text-primary-rgb: 240, 240, 240;
+        --text-secondary-rgb: 199, 217, 240;
+    }
+}
+
+$bg-primary: var(--bg-primary);
+$bg-secondary: var(--bg-secondary);
+$bg-card: var(--bg-card);
+$bg-button: var(--bg-button);
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+
+@function lighten($color-name, $percentage) {
+    @return color-mix(in srgb, var(--#{$color-name}), white $percentage);
+}
+
+@function with-opacity($color-name, $opacity) {
+    @return rgba(var(--#{$color-name}-rgb), $opacity);
+}
